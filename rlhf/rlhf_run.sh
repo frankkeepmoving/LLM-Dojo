@@ -3,11 +3,11 @@
 # rlhf_type:[PPO,RLOO,CPO,DPO,SimPO,CPOSimPO,Reward]
 # train_mode:[lora, qlora, full]
 
-TRAIN_DATA='./'
-MODEL_PATH='./'
-OUTPUT_PATH='./'
+TRAIN_DATA='/data/code/LLM-Dojo/llm_tricks/DPO_example/unsloth_dpo.jsonl'
+MODEL_PATH='/data/models/qwen2.5-7b'
+OUTPUT_PATH='./output'
 
-CUDA_VISIBLE_DEVICES=2,3 accelerate launch --config_file ./ds_config/ds_zero2.yaml ./train_rlhf.py \
+CUDA_VISIBLE_DEVICES=0,1 accelerate launch --config_file ./ds_config/ds_zero2.yaml ./train_rlhf.py \
     --model_name_or_path "$MODEL_PATH" \
     --train_data_path "$TRAIN_DATA" \
     --output_dir "$OUTPUT_PATH" \
