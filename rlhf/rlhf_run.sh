@@ -3,7 +3,7 @@
 # rlhf_type:[PPO,RLOO,CPO,DPO,SimPO,CPOSimPO,Reward]
 # train_mode:[lora, qlora, full]
 
-TRAIN_DATA='/data/code/LLM-Dojo/llm_tricks/DPO_example/unsloth_dpo.jsonl'
+TRAIN_DATA='/data/traindata/btfChinese_DPO_format.jsonl'
 MODEL_PATH='/data/models/qwen2.5-7b'
 OUTPUT_PATH='./output'
 
