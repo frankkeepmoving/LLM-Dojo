@@ -9,8 +9,8 @@ class DPOConfig(BaseConfig, TrlDPOConfig):
     """
     训练参数, 可直接在此修改. 想看更多参数可直接在TrlDPOConfig中去看
     """
-    beta: float = 0.1
-    label_smoothing: float = 0.0
+    beta: float = 0.3
+    label_smoothing: float = 0.1
     loss_type: Literal[
         "sigmoid",
         "hinge",

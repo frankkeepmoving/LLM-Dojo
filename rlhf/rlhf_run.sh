@@ -13,19 +13,22 @@ CUDA_VISIBLE_DEVICES=0,1 accelerate launch --config_file ./ds_config/ds_zero2.ya
     --output_dir "$OUTPUT_PATH" \
     --rlhf_type "DPO" \
     --train_mode "lora" \
-    --learning_rate 2e-5 \
-    --per_device_train_batch_size 2 \
+    --learning_rate 5e-5 \
+    --per_device_train_batch_size 1 \
     --gradient_checkpointing \
-    --gradient_accumulation_steps 8 \
+    --gradient_accumulation_steps 4 \
     --logging_steps 2 \
-    --num_train_epochs 1 \
+    --num_train_epochs 3 \
     --bf16 \
     --save_strategy "steps" \
     --report_to "tensorboard" \
     --save_steps 180 \
     --save_total_limit 5 \
-    --warmup_steps 10 \
+    --warmup_ratio 0.03 \
     --remove_unused_columns False\
+    --loss_type "robust" \
+    --beta 0.3 \
+    --label_smoothing 0.1 \
     --lr_scheduler_type "cosine"
 
 # [CPO,DPO,SimPO,CPOSimPO,Reward] 可直接使用上述运行
