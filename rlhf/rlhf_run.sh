@@ -21,6 +21,7 @@ CUDA_VISIBLE_DEVICES=0,1 accelerate launch --config_file ./ds_config/ds_zero2.ya
     --num_train_epochs 3 \
     --bf16 \
     --save_strategy "steps" \
+    --logging_dir "logs" \
     --report_to "tensorboard" \
     --save_steps 180 \
     --save_total_limit 5 \
